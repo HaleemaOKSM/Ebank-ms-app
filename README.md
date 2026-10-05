@@ -11,3 +11,6 @@ Ebank accounts-service first test
 routage statique
 ![img_6.png](img_6.png)
 ![img_7.png](img_7.png)
+
+routage dynamique (discovery service)
+![img_8.png](img_8.png)
