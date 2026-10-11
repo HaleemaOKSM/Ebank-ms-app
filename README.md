@@ -14,3 +14,8 @@ routage statique
 
 routage dynamique (discovery service)
 ![img_8.png](img_8.png)
+
+routage dynamique OPENFEIGN 
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+

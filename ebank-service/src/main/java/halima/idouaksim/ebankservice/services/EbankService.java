@@ -1,6 +1,7 @@
 package halima.idouaksim.ebankservice.services;
 
 import halima.idouaksim.ebankservice.entities.BankAccount;
+import halima.idouaksim.ebankservice.feign.CustomerRestClient;
 import halima.idouaksim.ebankservice.repository.BankAccountRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +15,21 @@ import java.util.UUID;
 public class EbankService {
     private BankAccountRepository bankAccountRepository;
 
-    public EbankService(BankAccountRepository bankAccountRepository) {
+    private CustomerRestClient customerRestClient;
+    public EbankService(BankAccountRepository bankAccountRepository, CustomerRestClient customerRestClient) {
         this.bankAccountRepository = bankAccountRepository;
+        this.customerRestClient = customerRestClient;
     }
 
     public List<BankAccount> getAllBankAccounts() {
         return bankAccountRepository.findAll();
     }
     public BankAccount getBankAccountById( String id) {
-        return bankAccountRepository.findById(id).
+        BankAccount bankAccount = bankAccountRepository.findById(id).
                 orElseThrow(() -> new RuntimeException("Bank account not found"));
+        bankAccount.setCustomer(
+                customerRestClient.getCustomersById(bankAccount.getCustomerId()));
+        return bankAccount;
     }
 
     public BankAccount save(BankAccount bankAccount) {
