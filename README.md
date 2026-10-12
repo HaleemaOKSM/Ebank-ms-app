@@ -19,3 +19,6 @@ routage dynamique OPENFEIGN
 ![img_9.png](img_9.png)
 ![img_10.png](img_10.png)
 
+default customer name circuitBreaker
+![img_11.png](img_11.png)
+

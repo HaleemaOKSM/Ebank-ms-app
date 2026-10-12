@@ -2,6 +2,7 @@ package halima.idouaksim.ebankservice.services;
 
 import halima.idouaksim.ebankservice.entities.BankAccount;
 import halima.idouaksim.ebankservice.feign.CustomerRestClient;
+import halima.idouaksim.ebankservice.model.Customer;
 import halima.idouaksim.ebankservice.repository.BankAccountRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +34,13 @@ public class EbankService {
     }
 
     public BankAccount save(BankAccount bankAccount) {
-        bankAccount.setId(UUID.randomUUID().toString());
-        bankAccount.setCreatedAt(new Date());
-        return bankAccountRepository.save(bankAccount);
+        try {
+            Customer customer = customerRestClient.getCustomersById(bankAccount.getCustomerId());
+            bankAccount.setId(UUID.randomUUID().toString());
+            bankAccount.setCreatedAt(new Date());
+            return bankAccountRepository.save(bankAccount);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 }
