@@ -4,3 +4,6 @@
 ![img.png](img.png)
 test swagger 
 ![img_1.png](img_1.png)
+
+memory for the bot
+![img_2.png](img_2.png)
