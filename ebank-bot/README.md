@@ -21,5 +21,8 @@ find by id
 save
 ![img_7.png](img_7.png)
 
-Gateway
+test avec la Gateway
 ![img_8.png](img_8.png)
+
+Tester le chatbot avec un client Discord
+![img_9.png](img_9.png)
