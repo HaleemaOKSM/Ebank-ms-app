@@ -24,4 +24,5 @@ export class Accounts {
         return of({status: RequestStatus.ERROR, errorMessage: err.statusText})
       })
     )
+  protected readonly RequestStatus = RequestStatus;
 }
