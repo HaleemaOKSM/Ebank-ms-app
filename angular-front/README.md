@@ -18,3 +18,9 @@ bot component
 bot response
 ![img_6.png](img_6.png)
 
+markdown
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+
+intercepteur
+![img_9.png](img_9.png)
