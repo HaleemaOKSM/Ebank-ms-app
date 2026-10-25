@@ -24,3 +24,6 @@ markdown
 
 intercepteur
 ![img_9.png](img_9.png)
+
+streaming
+![img_10.png](img_10.png)
